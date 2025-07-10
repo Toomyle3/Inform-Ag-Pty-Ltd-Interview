@@ -1,0 +1,122 @@
+[
+  {
+    "pumpName": "Pump A",
+    "type": "centrifugal",
+    "area": "j500",
+    "latitude": 35.6895,
+    "offSet": 3,
+    "longitude": 139.6917,
+    "flowRate": 200,
+    "current_pressure": 50,
+    "min_pressure": 30,
+    "max_pressure": 70
+  },
+  {
+    "pumpName": "Pump B",
+    "type": "submersible",
+    "area": "K450",
+    "latitude": -33.8688,
+    "offSet": 3,
+    "longitude": 151.2093,
+    "flowRate": 180,
+    "current_pressure": 45,
+    "min_pressure": 25,
+    "max_pressure": 65
+  },
+  {
+    "pumpName": "Pump C",
+    "type": "diaphragm",
+    "area": "A600",
+    "offSet": 3,
+    "latitude": 51.5074,
+    "longitude": -0.1278,
+    "flowRate": 220,
+    "current_pressure": 55,
+    "min_pressure": 35,
+    "max_pressure": 75
+  },
+  {
+    "pumpName": "Pump D",
+    "type": "rotary",
+    "area": "P350",
+    "offSet": 3,
+    "latitude": 40.7128,
+    "longitude": -74.006,
+    "flowRate": 150,
+    "current_pressure": 40,
+    "min_pressure": 20,
+    "max_pressure": 60
+  },
+  {
+    "pumpName": "Pump E",
+    "type": "peristaltic",
+    "area": "A700",
+    "offSet": 3,
+    "latitude": 48.8566,
+    "longitude": 2.3522,
+    "flowRate": 250,
+    "current_pressure": 60,
+    "min_pressure": 40,
+    "max_pressure": 80
+  },
+  {
+    "pumpName": "Pump F",
+    "type": "centrifugal",
+    "area": "T480",
+    "latitude": 55.7558,
+    "offSet": 3,
+    "longitude": 37.6176,
+    "flowRate": 190,
+    "current_pressure": 47,
+    "min_pressure": 27,
+    "max_pressure": 67
+  },
+  {
+    "pumpName": "Pump G",
+    "type": "submersible",
+    "area": "R530",
+    "offSet": 3,
+    "latitude": -23.5505,
+    "longitude": -46.6333,
+    "flowRate": 210,
+    "current_pressure": 52,
+    "min_pressure": 32,
+    "max_pressure": 72
+  },
+  {
+    "pumpName": "Pump H",
+    "type": "diaphragm",
+    "area": "Y620",
+    "offSet": 3,
+    "latitude": 34.0522,
+    "longitude": -118.2437,
+    "flowRate": 230,
+    "current_pressure": 57,
+    "min_pressure": 37,
+    "max_pressure": 77
+  },
+  {
+    "pumpName": "Pump I",
+    "type": "rotary",
+    "area": "E390",
+    "latitude": 19.076,
+    "offSet": 3,
+    "longitude": 72.8777,
+    "flowRate": 160,
+    "current_pressure": 42,
+    "min_pressure": 22,
+    "max_pressure": 62
+  },
+  {
+    "pumpName": "Pump J",
+    "type": "peristaltic",
+    "area": "W750",
+    "latitude": 31.2304,
+    "longitude": 121.4737,
+    "offSet": 3,
+    "flowRate": 260,
+    "current_pressure": 62,
+    "min_pressure": 42,
+    "max_pressure": 82
+  }
+]
