@@ -41,7 +41,7 @@ const router = createRouter({
   routes,
 });
 
-router.beforeEach(async (to, from, next) => {
+router.beforeEach(async (to, _, next) => {
   const clerk = useClerk();
   const checkAuth = () => {
     return new Promise((resolve) => {
