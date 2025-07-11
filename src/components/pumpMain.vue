@@ -15,9 +15,10 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '
 import { Input } from './ui/input'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from './ui/table'
-
+import { useRouter } from 'vue-router'
 // Dialog states
 const newDialogOpen = ref(false)
+const router = useRouter();
 const editDialogOpen = ref(false)
 const { resetForm } = useForm()
 const selectedPump = ref<Pump | null>(null)
@@ -143,6 +144,17 @@ const onUpdateSubmit = async () => {
   editDialogOpen.value = false;
 }
 
+const redirectToPumpDetails = (pumpData: Pump) => {
+  const data = JSON.parse(JSON.stringify(pumpData));
+  router.push({
+    name: 'pump-page',
+    params: { id: data._id },
+    query: { pumpData: JSON.stringify(data) }
+  }).catch(err => {
+    console.error('Navigation failed:', err);
+  });
+};
+
 </script>
 
 <template>
@@ -150,7 +162,7 @@ const onUpdateSubmit = async () => {
     <nav class="bg-gray-800 text-white p-4 flex items-center justify-between gap-4">
       <div class="flex items-center">
         <h2 class="pr-4">+</h2>
-        <h2 class="text-xl font-bold">PumpMaster</h2>
+        <h2 class="text-xl font-bold cursor-pointer" @click="$router.push('/')">PumpMaster</h2>
         <div class="flex">
           <div v-for="title in navBarTitles || []" :key="title.id" class="p-2 hover:bg-gray-700 rounded cursor-pointer">
             {{ title.title }}
@@ -175,7 +187,7 @@ const onUpdateSubmit = async () => {
         <h1 class="text-2xl font-bold mb-4">Pumps</h1>
         <Dialog v-model:open="newDialogOpen">
           <DialogTrigger as-child>
-            <Button class="bg-gray-300 text-black h-[40px]">New Pump</Button>
+            <Button class="bg-gray-300 text-black h-[40px] cursor-pointer">New Pump</Button>
           </DialogTrigger>
           <DialogContent class="max-w-md">
             <DialogHeader>
@@ -316,7 +328,8 @@ const onUpdateSubmit = async () => {
           </TableRow>
         </TableHeader>
         <TableBody>
-          <TableRow v-for="pump in filteredPumps" :key="pump._id">
+          <TableRow v-for="pump in filteredPumps" :key="pump._id" @click="redirectToPumpDetails(pump)"
+            class="cursor-pointer hover:bg-gray-100">
             <TableCell>{{ pump.pumpName }}</TableCell>
             <TableCell>{{ pump.type }}</TableCell>
             <TableCell>{{ pump.area }}</TableCell>

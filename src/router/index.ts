@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
-import HelloWorld from "../components/pumpMain.vue";
+import HomePage from "../components/pumpMain.vue";
+import PumpDetails from "../components/pumpDetails.vue";
 import SignInPage from "../auth/SignInPage.vue";
 import SignUpPage from "../auth/SignUpPage.vue";
 
@@ -7,7 +8,12 @@ const routes = [
   {
     path: "/",
     name: "Home",
-    component: HelloWorld,
+    component: HomePage,
+  },
+  {
+    path: "/pump-page/:id",
+    name: "pump-page",
+    component: PumpDetails,
   },
   {
     path: "/sign-in",
