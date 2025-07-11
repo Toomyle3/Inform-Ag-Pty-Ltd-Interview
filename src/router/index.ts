@@ -4,6 +4,7 @@ import PumpDetails from "../components/pumpDetails.vue";
 import SignInPage from "../auth/SignInPage.vue";
 import SignUpPage from "../auth/SignUpPage.vue";
 import { useClerk } from "@clerk/vue";
+import { watch } from "vue";
 
 const routes = [
   {
@@ -15,8 +16,8 @@ const routes = [
   {
     path: "/pump-page/:id",
     name: "pump-page",
-    meta: { requiresAuth: true },
     component: PumpDetails,
+    meta: { requiresAuth: true },
   },
   {
     path: "/sign-in",
@@ -42,8 +43,30 @@ const router = createRouter({
 
 router.beforeEach(async (to, from, next) => {
   const clerk = useClerk();
-  if (to.meta.requiresAuth && !clerk.value) {
-    return next("/sign-in");
+  const checkAuth = () => {
+    return new Promise((resolve) => {
+      if (clerk?.value?.loaded) {
+        resolve(clerk.value.user !== null);
+      } else {
+        const unwatch = watch(
+          () => clerk?.value?.loaded,
+          (loaded) => {
+            if (loaded) {
+              unwatch();
+              resolve(clerk?.value?.user !== null);
+            }
+          }
+        );
+      }
+    });
+  };
+  const requiresAuth = to.matched.some((record) => record.meta.requiresAuth);
+  if (!requiresAuth) {
+    return next();
+  }
+  const isSignedIn = await checkAuth();
+  if (requiresAuth && !isSignedIn) {
+    return next({ path: "/sign-in", query: { redirect: to.fullPath } });
   }
   next();
 });
