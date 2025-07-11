@@ -194,7 +194,7 @@ const redirectToPumpDetails = (pumpData: Pump) => {
               <DialogTitle>Create New Pump</DialogTitle>
             </DialogHeader>
             <Form @submit="onCreateSubmit()" class="space-y-4">
-              <FormField v-slot="{ field }" name="pumpName">
+              <FormField name="pumpName">
                 <FormItem>
                   <FormLabel>Pump Name</FormLabel>
                   <FormControl>
@@ -203,7 +203,7 @@ const redirectToPumpDetails = (pumpData: Pump) => {
                   <FormMessage />
                 </FormItem>
               </FormField>
-              <FormField v-slot="{ field }" name="type">
+              <FormField name="type">
                 <FormItem>
                   <FormLabel>Pump Type</FormLabel>
                   <FormControl>
@@ -223,7 +223,7 @@ const redirectToPumpDetails = (pumpData: Pump) => {
                   <FormMessage />
                 </FormItem>
               </FormField>
-              <FormField v-slot="{ field }" name="area">
+              <FormField name="area">
                 <FormItem>
                   <FormLabel>Area</FormLabel>
                   <FormControl>
@@ -232,7 +232,7 @@ const redirectToPumpDetails = (pumpData: Pump) => {
                   <FormMessage />
                 </FormItem>
               </FormField>
-              <FormField v-slot="{ field }" name="latitude">
+              <FormField name="latitude">
                 <FormItem>
                   <FormLabel>Latitude / Longitude</FormLabel>
                   <FormControl>
@@ -244,7 +244,7 @@ const redirectToPumpDetails = (pumpData: Pump) => {
                   <FormMessage />
                 </FormItem>
               </FormField>
-              <FormField v-slot="{ field }" name="offSet">
+              <FormField name="offSet">
                 <FormItem>
                   <FormLabel>Offset</FormLabel>
                   <FormControl>
@@ -253,7 +253,7 @@ const redirectToPumpDetails = (pumpData: Pump) => {
                   <FormMessage />
                 </FormItem>
               </FormField>
-              <FormField v-slot="{ field }" name="min_pressure">
+              <FormField name="min_pressure">
                 <FormItem>
                   <FormLabel>Reassure Max</FormLabel>
                   <FormControl>
@@ -264,7 +264,7 @@ const redirectToPumpDetails = (pumpData: Pump) => {
                   <FormMessage />
                 </FormItem>
               </FormField>
-              <FormField v-slot="{ field }" name="flowRate">
+              <FormField name="flowRate">
                 <FormItem>
                   <FormLabel>Flow Rate</FormLabel>
                   <FormControl>
@@ -273,7 +273,7 @@ const redirectToPumpDetails = (pumpData: Pump) => {
                   <FormMessage />
                 </FormItem>
               </FormField>
-              <FormField v-slot="{ field }" name="current_pressure">
+              <FormField name="current_pressure">
                 <FormItem>
                   <FormLabel>Current Pressure</FormLabel>
                   <FormControl>
@@ -363,7 +363,7 @@ const redirectToPumpDetails = (pumpData: Pump) => {
             <h2 class="text-2xl font-bold">{{ selectedPump?.pumpName || 'Pump' }} <span
                 class="text-sm text-gray-500">Pump ID {{ selectedPump?._id }}</span></h2>
             <Form @submit=onUpdateSubmit class="space-y-4">
-              <FormField v-slot="{ field }" name="pumpName">
+              <FormField name="pumpName">
                 <FormItem>
                   <FormLabel>Pump Name</FormLabel>
                   <FormControl>
@@ -372,7 +372,7 @@ const redirectToPumpDetails = (pumpData: Pump) => {
                   <FormMessage />
                 </FormItem>
               </FormField>
-              <FormField v-slot="{ field }" name="type">
+              <FormField name="type">
                 <FormItem>
                   <FormLabel>Pump Type</FormLabel>
                   <FormControl>
@@ -381,7 +381,7 @@ const redirectToPumpDetails = (pumpData: Pump) => {
                   <FormMessage />
                 </FormItem>
               </FormField>
-              <FormField v-slot="{ field }" name="area">
+              <FormField name="area">
                 <FormItem>
                   <FormLabel>Area</FormLabel>
                   <FormControl>
@@ -390,7 +390,7 @@ const redirectToPumpDetails = (pumpData: Pump) => {
                   <FormMessage />
                 </FormItem>
               </FormField>
-              <FormField v-slot="{ field }" name="latitude">
+              <FormField name="latitude">
                 <FormItem>
                   <FormLabel>Latitude / Longitude</FormLabel>
                   <FormControl>
@@ -402,7 +402,7 @@ const redirectToPumpDetails = (pumpData: Pump) => {
                   <FormMessage />
                 </FormItem>
               </FormField>
-              <FormField v-slot="{ field }" name="offSet">
+              <FormField name="offSet">
                 <FormItem>
                   <FormLabel>Offset</FormLabel>
                   <FormControl>
@@ -411,7 +411,7 @@ const redirectToPumpDetails = (pumpData: Pump) => {
                   <FormMessage />
                 </FormItem>
               </FormField>
-              <FormField v-slot="{ field }" name="min_pressure">
+              <FormField name="min_pressure">
                 <FormItem>
                   <FormLabel>Reassure Min / Max</FormLabel>
                   <FormControl>
@@ -423,7 +423,7 @@ const redirectToPumpDetails = (pumpData: Pump) => {
                   <FormMessage />
                 </FormItem>
               </FormField>
-              <FormField v-slot="{ field }" name="flowRate">
+              <FormField name="flowRate">
                 <FormItem>
                   <FormLabel>Flow Rate</FormLabel>
                   <FormControl>
@@ -432,7 +432,7 @@ const redirectToPumpDetails = (pumpData: Pump) => {
                   <FormMessage />
                 </FormItem>
               </FormField>
-              <FormField v-slot="{ field }" name="current_pressure">
+              <FormField name="current_pressure">
                 <FormItem>
                   <FormLabel>Current Pressure</FormLabel>
                   <FormControl>
