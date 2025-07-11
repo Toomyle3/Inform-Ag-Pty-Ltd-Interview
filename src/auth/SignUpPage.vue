@@ -4,7 +4,7 @@ import "../style.css";
 </script>
 
 <template>
-  <main class="flex w-full">
+  <main class="flex w-full mt-[-3%]">
     <div class="flex flex-col w-full h-screen">
       <img src="../../public/pump.jpeg" alt="background" class="background-image">
       <div class="flex gap-[10px] pl-[30px] w-full top-0 justify-start"
@@ -12,7 +12,7 @@ import "../style.css";
         <h3>+</h3>
         <h3>PumpMaster</h3>
       </div>
-      <div class="flex justify-center items-center pt-[10%]">
+      <div class="flex justify-center items-center pt-[20%]">
         <SignUp :sign-in-fallback-redirect-url="'/sign-in'" :sign-in-url="'/sign-in'"
           :sign-in-force-redirect-url="'/sign-in'" />
       </div>
