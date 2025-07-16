@@ -20,7 +20,6 @@ import { useRouter } from 'vue-router'
 const newDialogOpen = ref(false)
 const router = useRouter();
 const editDialogOpen = ref(false)
-const { resetForm } = useForm()
 const selectedPump = ref<Pump | null>(null)
 const formData = ref({
   pumpName: '',
@@ -92,7 +91,7 @@ const onCreateSubmit = async () => {
   payload.max_pressure = Number(payload.max_pressure)
   payload.offSet = Number(payload.offSet)
   await createPump.mutate(payload)
-  resetForm()
+  handleResetForm()
   newDialogOpen.value = false;
 }
 
@@ -135,14 +134,28 @@ const openEditDialog = (pump: Pump) => {
 
 const onUpdateSubmit = async () => {
   const payload = JSON.parse(JSON.stringify(formData.value))
-  console.log(payload);
   await updatePump.mutate({
     id: selectedPump.value?._id,
     ...payload,
   })
-  resetForm()
+  handleResetForm()
   editDialogOpen.value = false;
 }
+
+const handleResetForm = () => {
+  formData.value = {
+    pumpName: '',
+    type: '',
+    area: '',
+    flowRate: 0,
+    offSet: 0,
+    current_pressure: 0,
+    latitude: 0,
+    longitude: 0,
+    max_pressure: 0,
+    min_pressure: 0,
+  }
+};
 
 const redirectToPumpDetails = (pumpData: Pump) => {
   const data = JSON.parse(JSON.stringify(pumpData));
@@ -187,7 +200,7 @@ const redirectToPumpDetails = (pumpData: Pump) => {
         <h1 class="text-2xl font-bold mb-4">Pumps</h1>
         <Dialog v-model:open="newDialogOpen">
           <DialogTrigger as-child>
-            <Button class="bg-gray-300 text-black h-[40px] cursor-pointer">New Pump</Button>
+            <Button @click="handleResetForm()" class="bg-gray-300 text-black h-[40px] cursor-pointer">New Pump</Button>
           </DialogTrigger>
           <DialogContent class="max-w-md">
             <DialogHeader>
@@ -328,8 +341,7 @@ const redirectToPumpDetails = (pumpData: Pump) => {
           </TableRow>
         </TableHeader>
         <TableBody>
-          <TableRow v-for="pump in filteredPumps" :key="pump._id"
-            class="cursor-pointer hover:bg-gray-100">
+          <TableRow v-for="pump in filteredPumps" :key="pump._id" class="cursor-pointer hover:bg-gray-100">
             <TableCell @click="redirectToPumpDetails(pump)">{{ pump.pumpName }}</TableCell>
             <TableCell @click="redirectToPumpDetails(pump)">{{ pump.type }}</TableCell>
             <TableCell @click="redirectToPumpDetails(pump)">{{ pump.area }}</TableCell>
