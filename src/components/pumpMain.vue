@@ -328,17 +328,17 @@ const redirectToPumpDetails = (pumpData: Pump) => {
           </TableRow>
         </TableHeader>
         <TableBody>
-          <TableRow v-for="pump in filteredPumps" :key="pump._id" @click="redirectToPumpDetails(pump)"
+          <TableRow v-for="pump in filteredPumps" :key="pump._id"
             class="cursor-pointer hover:bg-gray-100">
-            <TableCell>{{ pump.pumpName }}</TableCell>
-            <TableCell>{{ pump.type }}</TableCell>
-            <TableCell>{{ pump.area }}</TableCell>
-            <TableCell>{{ pump.latitude.toFixed(4) }}</TableCell>
-            <TableCell>{{ pump.longitude.toFixed(4) }}</TableCell>
-            <TableCell>{{ pump.flowRate }}</TableCell>
-            <TableCell>{{ pump.current_pressure }}</TableCell>
-            <TableCell>{{ pump.min_pressure }}</TableCell>
-            <TableCell>{{ pump.max_pressure }}</TableCell>
+            <TableCell @click="redirectToPumpDetails(pump)">{{ pump.pumpName }}</TableCell>
+            <TableCell @click="redirectToPumpDetails(pump)">{{ pump.type }}</TableCell>
+            <TableCell @click="redirectToPumpDetails(pump)">{{ pump.area }}</TableCell>
+            <TableCell @click="redirectToPumpDetails(pump)">{{ pump.latitude.toFixed(4) }}</TableCell>
+            <TableCell @click="redirectToPumpDetails(pump)">{{ pump.longitude.toFixed(4) }}</TableCell>
+            <TableCell @click="redirectToPumpDetails(pump)">{{ pump.flowRate }}</TableCell>
+            <TableCell @click="redirectToPumpDetails(pump)">{{ pump.current_pressure }}</TableCell>
+            <TableCell @click="redirectToPumpDetails(pump)">{{ pump.min_pressure }}</TableCell>
+            <TableCell @click="redirectToPumpDetails(pump)">{{ pump.max_pressure }}</TableCell>
             <TableCell>
               <DropdownMenu>
                 <DropdownMenuTrigger as-child>
