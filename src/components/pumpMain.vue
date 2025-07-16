@@ -312,7 +312,7 @@ const redirectToPumpDetails = (pumpData: Pump) => {
           </div>
         </div>
       </div>
-      <Table>
+      <Table class="w-full">
         <TableHeader>
           <TableRow>
             <TableHead>Pump Name</TableHead>
