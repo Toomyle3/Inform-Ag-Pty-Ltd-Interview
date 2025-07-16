@@ -182,7 +182,7 @@ const redirectToPumpDetails = (pumpData: Pump) => {
       </div>
     </nav>
 
-    <main class="flex-1 p-6 overflow-auto bg-white rounded shadow" style="max-width: 1200px;">
+    <main class="flex-1 p-6 overflow-auto bg-white rounded w-full shadow" style="max-width: 1200px;">
       <div class="flex justify-between">
         <h1 class="text-2xl font-bold mb-4">Pumps</h1>
         <Dialog v-model:open="newDialogOpen">
