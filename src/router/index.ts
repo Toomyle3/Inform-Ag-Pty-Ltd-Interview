@@ -25,11 +25,6 @@ const routes = [
     component: SignInPage,
   },
   {
-    path: "/sign-in/sso-callback",
-    name: "sso-callback",
-    component: SignInPage,
-  },
-  {
     path: "/sign-up",
     name: "SignUp",
     component: SignUpPage,
