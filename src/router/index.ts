@@ -61,7 +61,7 @@ router.beforeEach(async (to, _, next) => {
   }
   const isSignedIn = await checkAuth();
   if (requiresAuth && !isSignedIn) {
-    return next({ path: "/sign-in"});
+    return next({ path: "/"});
   }
   next();
 });
