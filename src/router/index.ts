@@ -20,7 +20,7 @@ const routes = [
     meta: { requiresAuth: true },
   },
   {
-    path: "/sign-in",
+    path: "/sign_in",
     name: "SignIn",
     component: SignInPage,
   },
@@ -30,7 +30,7 @@ const routes = [
     component: SignInPage,
   },
   {
-    path: "/sign-up",
+    path: "/sign_up",
     name: "SignUp",
     component: SignUpPage,
   },
