@@ -25,6 +25,11 @@ const routes = [
     component: SignInPage,
   },
   {
+    path: "/sign-in/sso-callback",
+    name: "sso-callback",
+    component: SignInPage,
+  },
+  {
     path: "/sign-up",
     name: "SignUp",
     component: SignUpPage,
@@ -61,7 +66,7 @@ router.beforeEach(async (to, _, next) => {
   }
   const isSignedIn = await checkAuth();
   if (requiresAuth && !isSignedIn) {
-    return next({ path: "/sign-in"});
+    return next({ path: "/sign-in", query: { redirect: to.fullPath } });
   }
   next();
 });
