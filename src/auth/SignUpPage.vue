@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { SignUp } from "@clerk/vue";
 import "../style.css";
+const baseUrl = import.meta.env.VITE_CLERK_REDIRECT_URL || 'http://localhost:5173';
+const signInUrl = `${baseUrl}/sign-in`;
 </script>
 
 <template>
@@ -13,8 +15,8 @@ import "../style.css";
         <h3>PumpMaster</h3>
       </div>
       <div class="flex justify-center items-center pt-[10%]">
-        <SignUp :sign-in-fallback-redirect-url="'/sign-in'" :sign-in-url="'/sign-in'"
-          :sign-in-force-redirect-url="'/sign-in'" />
+        <SignUp :sign-in-fallback-redirect-url="signInUrl" :sign-in-url="signInUrl"
+          :sign-in-force-redirect-url="signInUrl" />
       </div>
     </div>
   </main>
