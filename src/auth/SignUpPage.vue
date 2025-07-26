@@ -13,8 +13,7 @@ import "../style.css";
         <h3>PumpMaster</h3>
       </div>
       <div class="flex justify-center items-center pt-[10%]">
-        <SignUp :sign-in-fallback-redirect-url="'/sign-in'" :sign-in-url="'/sign-in'"
-          :sign-in-force-redirect-url="'/sign-in'" />
+        <SignUp />
       </div>
     </div>
   </main>
