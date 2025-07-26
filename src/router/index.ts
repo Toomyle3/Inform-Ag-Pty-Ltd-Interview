@@ -20,7 +20,7 @@ const routes = [
     meta: { requiresAuth: true },
   },
   {
-    path: "/sign_in",
+    path: "/sign-in",
     name: "SignIn",
     component: SignInPage,
   },
@@ -30,7 +30,7 @@ const routes = [
     component: SignInPage,
   },
   {
-    path: "/sign_up",
+    path: "/sign-up",
     name: "SignUp",
     component: SignUpPage,
   },
@@ -66,7 +66,7 @@ router.beforeEach(async (to, _, next) => {
   }
   const isSignedIn = await checkAuth();
   if (requiresAuth && !isSignedIn) {
-    return next({ path: "/sign_in", query: { redirect: to.fullPath } });
+    return next({ path: "/sign-in", query: { redirect: to.fullPath } });
   }
   next();
 });
