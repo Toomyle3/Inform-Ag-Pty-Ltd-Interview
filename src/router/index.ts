@@ -66,7 +66,7 @@ router.beforeEach(async (to, _, next) => {
   }
   const isSignedIn = await checkAuth();
   if (requiresAuth && !isSignedIn) {
-    return next({ path: "/sign-in", query: { redirect: to.fullPath } });
+    return next({ path: "/sign_in", query: { redirect: to.fullPath } });
   }
   next();
 });
