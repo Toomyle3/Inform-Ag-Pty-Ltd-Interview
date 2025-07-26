@@ -36,34 +36,34 @@ const router = createRouter({
   routes,
 });
 
-router.beforeEach(async (to, _, next) => {
-  const clerk = useClerk();
-  const checkAuth = () => {
-    return new Promise((resolve) => {
-      if (clerk?.value?.loaded) {
-        resolve(clerk.value.user !== null);
-      } else {
-        const unwatch = watch(
-          () => clerk?.value?.loaded,
-          (loaded) => {
-            if (loaded) {
-              unwatch();
-              resolve(clerk?.value?.user !== null);
-            }
-          }
-        );
-      }
-    });
-  };
-  const requiresAuth = to.matched.some((record) => record.meta.requiresAuth);
-  if (!requiresAuth) {
-    return next();
-  }
-  const isSignedIn = await checkAuth();
-  if (requiresAuth && !isSignedIn) {
-    return next({ path: "/sign-in"});
-  }
-  next();
-});
+// router.beforeEach(async (to, _, next) => {
+//   const clerk = useClerk();
+//   const checkAuth = () => {
+//     return new Promise((resolve) => {
+//       if (clerk?.value?.loaded) {
+//         resolve(clerk.value.user !== null);
+//       } else {
+//         const unwatch = watch(
+//           () => clerk?.value?.loaded,
+//           (loaded) => {
+//             if (loaded) {
+//               unwatch();
+//               resolve(clerk?.value?.user !== null);
+//             }
+//           }
+//         );
+//       }
+//     });
+//   };
+//   const requiresAuth = to.matched.some((record) => record.meta.requiresAuth);
+//   if (!requiresAuth) {
+//     return next();
+//   }
+//   const isSignedIn = await checkAuth();
+//   if (requiresAuth && !isSignedIn) {
+//     return next({ path: "/sign-in"});
+//   }
+//   next();
+// });
 
 export default router;
