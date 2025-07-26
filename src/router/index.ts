@@ -3,8 +3,8 @@ import HomePage from "../components/pumpMain.vue";
 import PumpDetails from "../components/pumpDetails.vue";
 import SignInPage from "../auth/SignInPage.vue";
 import SignUpPage from "../auth/SignUpPage.vue";
-import { useClerk } from "@clerk/vue";
-import { watch } from "vue";
+// import { useClerk } from "@clerk/vue";
+// import { watch } from "vue";
 
 const routes = [
   {
