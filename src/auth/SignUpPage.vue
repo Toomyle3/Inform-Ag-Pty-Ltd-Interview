@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { SignUp } from "@clerk/vue";
 import "../style.css";
-
 </script>
 
 <template>
@@ -14,7 +13,8 @@ import "../style.css";
         <h3>PumpMaster</h3>
       </div>
       <div class="flex justify-center items-center pt-[10%]">
-        <SignUp />
+        <SignUp :sign-in-fallback-redirect-url="'/sign-in'" :sign-in-url="'/sign-in'"
+          :sign-in-force-redirect-url="'/sign-in'" />
       </div>
     </div>
   </main>
