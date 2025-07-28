@@ -14,8 +14,8 @@ import "../style.css";
         <h3>PumpMaster</h3>
       </div>
       <div class="flex justify-center items-center pt-[10%]">
-        <SignIn :routing="'path'" :path="'/sign-in'" :sign-up-url="'/sign-up'"
-          :sign-up-force-redirect-url="'/sign-up'" />
+        <SignIn :routing="'path'" :path="'/sign-in'" :sign-up-fallback-redirect-url="'/sign-up'"
+          :sign-up-url="'/sign-up'" />
       </div>
     </div>
   </main>
