@@ -14,7 +14,7 @@ import "../style.css";
         <h3>PumpMaster</h3>
       </div>
       <div class="flex justify-center items-center pt-[10%]">
-        <SignUp :routing="'path'" :path="'/sign-up'"/>
+        <SignUp />
       </div>
     </div>
   </main>
